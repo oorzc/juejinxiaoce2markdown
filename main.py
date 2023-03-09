@@ -64,7 +64,9 @@ class Juejinxiaoce2Markdown:
                 new_img_url = f'https:{new_img_url}'
             try:
                 suffix = os.path.splitext(new_img_url)[-1]
-                img_file_name = f'{img_index + 1}{suffix}'.replace('?', '')
+                # img_file_name = f'{img_index + 1}{suffix}'.replace('?', '')
+                # 后最jpg
+                img_file_name = f'{img_index + 1}.jpg'.replace('?', '')
                 md_relative_img_path = os.path.join(markdown_relative_img_dir, img_file_name)
                 img_save_path = os.path.join(section_img_dir, img_file_name)
                 urlretrieve(new_img_url, img_save_path)
